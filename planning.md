@@ -9,6 +9,6 @@
 -each burger must have a button to mark it devoured 
 -each burger must have a button to delete it
 
-## burger
+## burger entity
 -text: varchar
--devour : boolean
+-devour : boolean 
