@@ -14,7 +14,7 @@
 </section>
 
 <section class="container">
-  <h2>FINISHED</h2> 
+  <h2>FINISHED</h2>
   <ul>
     {{#each burgers }}
     {{#if devoured}}
@@ -22,4 +22,16 @@
     {{/if}}
     {{/each}}
   </ul>
+</section>
+
+<section class = "container my-5"> 
+  <h5>Enter a burger you want to eat!</h5>
+  <form action="/api/burgers" method = "POST">
+    <div class="input-group mb-3">
+      <input name = "burger_name" type="text" class="form-control" placeholder="Burger Name" aria-label="insert burger name">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" >Submit</button>
+      </div>
+    </div>
+  </form>
 </section>
