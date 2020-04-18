@@ -9,13 +9,31 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/api/burgers", (req,res)=>{
-     const newBurgerData = req.body.burger_name;
-    
-    burgers.create(newBurgerData, ()=>{
+router.post("/api/burgers", (req, res) => {
+    const newBurgerData = req.body.burger_name;
+
+    burgers.create(newBurgerData, () => {
         const SEE_OTHER = 303;
-        res.redirect(SEE_OTHER, "/"); 
+        res.redirect(SEE_OTHER, "/");
     })
+});
+
+router.patch("/api/burgers/:id", (req, res) => {
+    if (req.body.burger_name !== undefined || !req.body.devoured) {
+        return res.sendStatus(405);
+    }
+
+    const id = parseInt(req.params.id);
+    if (Number.isNaN(id)){
+        return res.sendStatus(404);
+    }
+    
+    burgers.markDevoured(req.params.id, (result) => {
+        if (result.affectedRows === 0) {
+            return res.status(404).end(); 
+        }
+        res.status(200).end();
+    });
 });
 
 module.exports = router;
