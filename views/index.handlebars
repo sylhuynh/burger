@@ -1,37 +1,69 @@
-<header class="container">
-  <h1>Eat-Da-Burger!</h1>
-</header>
+<div class="row">
+  <div class="col-sm">
+    <header class="container">
+    <img src="/images/burger-img.png">
+    </header>
+  </div>
+</div>
 
-<section class="container">
-  <h2>EAT?</h2>
-  <ul>
-    {{#each burgers }}
-    {{#unless devoured }}
-    <li>{{burger_name}}</li>
-    {{/unless}}
-    {{/each}}
-  </ul>
-</section>
+<div class="row">
+  <div class="col-sm-6">
+    <section class="container">
+      <h2 class= "text-center">ARE YOU HUNGRY?</h2>
+      <ul class="list-group">
+        {{#each burgers }}
+        {{#unless devoured }}
+        <li class="list-group-item text-left">{{burger_name}}<button data-id="{{ id }}"
+            class="eaten btn btn-info btn-sm ml-5 float-right">Devour it!</button></li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </section>
 
-<section class="container">
-  <h2>FINISHED</h2>
-  <ul>
-    {{#each burgers }}
-    {{#if devoured}}
-    <li>{{burger_name}}</li>
-    {{/if}}
-    {{/each}}
-  </ul>
-</section>
+  </div>
+  <div class="col-sm-6">
+    <section class="container">
+      <h2 class= "text-center">IT WAS DELICIOUS!</h2>
+      <ul class="list-group">
+        {{#each burgers }}
+        {{#if devoured}}
+        <li class="list-group-item text-left">{{burger_name}}</li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </section>
 
-<section class = "container my-5"> 
-  <h5>Enter a burger you want to eat!</h5>
-  <form action="/api/burgers" method = "POST">
-    <div class="input-group mb-3">
-      <input name = "burger_name" type="text" class="form-control" placeholder="Burger Name" aria-label="insert burger name">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="submit" >Submit</button>
-      </div>
-    </div>
-  </form>
-</section>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <section class="container my-5">
+      <h5 class="text-center"> Enter a burger you want to eat!</h5>
+      <form action="/api/burgers" method="POST">
+        <div class="input-group mb-3">
+          <input name="burger_name" type="text" class="form-control" placeholder="Burger Name"
+            aria-label="insert burger name">
+          <div class="input-group-append">
+            <button class="btn btn-outline-danger" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>
+
+<script>
+  $(() => {
+    $(".eaten").on("click", function() {
+        const id = $(this).attr("data-id");
+        $.ajax({
+            url: `/api/burgers/${id}`,
+            method: "PATCH", 
+            data: {devoured: true}
+        }).then(()=>{
+            location.reload();
+        })
+    })
+});
+</script>

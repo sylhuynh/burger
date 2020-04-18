@@ -19,10 +19,6 @@ router.post("/api/burgers", (req, res) => {
 });
 
 router.patch("/api/burgers/:id", (req, res) => {
-    if (req.body.burger_name !== undefined || !req.body.devoured) {
-        return res.sendStatus(405);
-    }
-
     const id = parseInt(req.params.id);
     if (Number.isNaN(id)){
         return res.sendStatus(404);
