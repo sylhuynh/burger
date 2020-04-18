@@ -9,4 +9,13 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/api/burgers", (req,res)=>{
+     const newBurgerData = req.body.burger_name;
+    
+    burgers.create(newBurgerData, ()=>{
+        const SEE_OTHER = 303;
+        res.redirect(SEE_OTHER, "/"); 
+    })
+});
+
 module.exports = router;
