@@ -1,5 +1,25 @@
-<h1>Burgers</h1>
+<header class="container">
+  <h1>Eat-Da-Burger!</h1>
+</header>
 
-<pre>
-  {{burgers}}  
-</pre>
+<section class="container">
+  <h2>EAT?</h2>
+  <ul>
+    {{#each burgers }}
+    {{#unless devoured }}
+    <li>{{burger_name}}</li>
+    {{/unless}}
+    {{/each}}
+  </ul>
+</section>
+
+<section class="container">
+  <h2>FINISHED</h2>
+  <ul>
+    {{#each burgers }}
+    {{#if devoured}}
+    <li>{{burger_name}}</li>
+    {{/if}}
+    {{/each}}
+  </ul>
+</section>
