@@ -1,5 +1,5 @@
-<div class="jumbotron container-fluid">
-  <div class="title-container">
+<div class="container-fluid">
+  <div class="jumbotron">
     <div class="row justify-content-center">
       <div class="col-sm-7">
         <h1 class="app-title">
@@ -8,8 +8,8 @@
         <div class="form-container">
           <form action="/api/burgers" method="POST">
             <div class="input-group mb-3">
-              <input name="burger_name" type="text" class="form-control" placeholder="Enter the name of the burger here!"
-                aria-label="insert burger name">
+              <input name="burger_name" type="text" class="form-control"
+                placeholder="Enter the name of the burger here!" aria-label="insert burger name">
               <div class="input-group-append">
                 <button class="btn btn-danger" type="submit">Order Up!</button>
               </div>
@@ -24,33 +24,35 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-4">
-    <section class="container">
-      <h2 class="text-center">ARE YOU HUNGRY?</h2>
-      <ul class="list-group">
-        {{#each burgers }}
-        {{#unless devoured }}
-        <li class="list-group-item text-left">{{burger_name}}<button data-id="{{ id }}"
-            class="eaten btn btn-info btn-sm ml-5 float-right">Devour it!</button></li>
-        {{/unless}}
-        {{/each}}
-      </ul>
-    </section>
-
-  </div>
-  <div class="col-sm-4">
-    <section class="container">
-      <h2 class="text-center">IT WAS DELICIOUS!</h2>
-      <ul class="list-group">
-        {{#each burgers }}
-        {{#if devoured}}
-        <li class="list-group-item text-left">{{burger_name}}</li>
-        {{/if}}
-        {{/each}}
-      </ul>
-    </section>
+<div class="burger-container">
+  <div class="row">
     <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <section class="container">
+        <h2 class="text-center">ARE YOU HUNGRY?</h2>
+        <ul class="list-group">
+          {{#each burgers }}
+          {{#unless devoured }}
+          <li class="list-group-item text-left">{{burger_name}}<button data-id="{{ id }}"
+              class="eaten btn btn-info btn-sm ml-5 float-right">Devour it!</button></li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </section>
+
+    </div>
+    <div class="col-sm-4">
+      <section class="container">
+        <h2 class="text-center">IT WAS DELICIOUS!</h2>
+        <ul class="list-group">
+          {{#each burgers }}
+          {{#if devoured}}
+          <li class="list-group-item text-left">{{burger_name}}</li>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </section>
+      <div class="col-sm-2"></div>
+    </div>
   </div>
 </div>
