@@ -2,7 +2,7 @@ body {
     background-color: #FBE6C7;
 }
 
-.jumbotron {
+.welcome-banner {
     background-color: white;
     border: 3px solid #6c4b2e;
     margin: 30px 50px 30px 50px;
@@ -12,7 +12,10 @@ body {
 .app-title {
 text-align: right;
 font-size: 60px;
-margin-top: 70px;
+margin-top: 40px;
+text-shadow: 5px 3px rgb(119,140,136);
+font-family: 'Bungee', cursive;
+color: #C7EAE4;
 }
 
 .logo {
@@ -20,10 +23,52 @@ width: 65%;
 }
 
 .form-container {
-    margin-left: 140px;
+    margin-left: 110px;
     width: 80%;
+    font-family: 'Sen', sans-serif;
+}
+
+.gif {
+    float: right;
+    width: 130px;
+}
+
+.progress {
+    width: 60%;
+    float: left;
+    margin-top: 60px;
+    margin-left: 120px;
+}
+
+.progress-bar {
+    background-color: #78b01d;
+}
+
+.order-container {
+    margin-bottom: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.menu, .media-board {
+    background-color: white;
+    border: 3px solid #6c4b2e;
+    margin: 0px 25px 0px 25px;
+    padding: 10px;
 }
 
 .burger-container {
-    margin-bottom: 30px;
+    background-image: url(https://thumbs.dreamstime.com/b/red-white-checkered-tablecloth-background-texture-rhombus-plaid-tablecloths-clothes-shirts-dresses-paper-bed-red-133409114.jpg);
+}
+
+.list-group-item {
+    margin: auto;
+    width: 18rem;
+    font-family: 'Sen', sans-serif;
+}
+
+h2 {
+    font-family: 'Bungee', cursive;
+    color: #FBBB55;
+    text-shadow: 2px 2px rgb(249,157,10);
 }

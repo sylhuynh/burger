@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="jumbotron">
+  <div class="jumbotron welcome-banner">
     <div class="row justify-content-center">
       <div class="col-sm-7">
         <h1 class="app-title">
@@ -11,12 +11,19 @@
               <input name="burger_name" type="text" class="form-control"
                 placeholder="Enter the name of the burger here!" aria-label="insert burger name">
               <div class="input-group-append">
-                <button class="btn btn-danger" type="submit">Order Up!</button>
+                <button class="btn btn-danger submit-btn" type="submit">Order Up!</button>
               </div>
             </div>
           </form>
         </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+            style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <img src="/images/pug-run.gif" class="gif" alt="pug-running"></img>
+
       </div>
+
       <div class="col-sm-5">
         <img class="logo" src="/images/burger-img.png">
       </div>
@@ -24,35 +31,36 @@
   </div>
 </div>
 
-<div class="burger-container">
+<div class="order-container">
   <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-4">
-      <section class="container">
-        <h2 class="text-center">ARE YOU HUNGRY?</h2>
-        <ul class="list-group">
-          {{#each burgers }}
-          {{#unless devoured }}
-          <li class="list-group-item text-left">{{burger_name}}<button data-id="{{ id }}"
-              class="eaten btn btn-info btn-sm ml-5 float-right">Devour it!</button></li>
-          {{/unless}}
-          {{/each}}
-        </ul>
-      </section>
-
+    <div class="col-sm-6">
+      <div class="container-fluid burger-container">
+        <div class="jumbotron menu">
+          <h2 class="text-center">ARE YOU HUNGRY?</h2>
+          <ul class="list-group">
+            {{#each burgers }}
+            {{#unless devoured }}
+            <li class="list-group-item text-left">{{burger_name}}<button data-id="{{ id }}"
+                class="eaten btn btn-info btn-sm ml-5 float-right">Devour it!</button></li>
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <section class="container">
-        <h2 class="text-center">IT WAS DELICIOUS!</h2>
-        <ul class="list-group">
-          {{#each burgers }}
-          {{#if devoured}}
-          <li class="list-group-item text-left">{{burger_name}}</li>
-          {{/if}}
-          {{/each}}
-        </ul>
-      </section>
-      <div class="col-sm-2"></div>
+    <div class="col-sm-6">
+      <div class="container-fluid burger-container">
+        <div class="jumbotron media-board">
+          <h2 class="text-center">IT WAS DELICIOUS!</h2>
+          <ul class="list-group">
+            {{#each burgers }}
+            {{#if devoured}}
+            <li class="list-group-item text-left">{{burger_name}}</li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
