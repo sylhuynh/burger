@@ -1,31 +1,35 @@
 <div class="container-fluid">
-  <div class="jumbotron welcome-banner">
-    <div class="row justify-content-center">
-      <div class="col-sm-7">
-        <h1 class="app-title">
-          Eat-Da-Burger!
-        </h1>
-        <div class="form-container">
-          <form action="/api/burgers" method="POST">
-            <div class="input-group mb-3">
-              <input name="burger_name" type="text" class="form-control"
-                placeholder="Enter the name of the burger here!" aria-label="insert burger name">
-              <div class="input-group-append">
-                <button class="btn btn-danger submit-btn" type="submit">Order Up!</button>
-              </div>
+  <div class="jumbotron outside-banner">
+    <div class="jumbotron inner-banner">
+      <div class="jumbotron welcome-banner">
+        <div class="row justify-content-center">
+          <div class="col-sm-7">
+            <h1 class="app-title">
+              Eat-Da-Burger!
+            </h1>
+            <div class="form-container">
+              <form action="/api/burgers" method="POST">
+                <div class="input-group mb-3">
+                  <input name="burger_name" type="text" class="form-control"
+                    placeholder="Enter the name of the burger here!" aria-label="insert burger name">
+                  <div class="input-group-append">
+                    <button class="btn btn-danger submit-btn" type="submit"> Order Up!</button>
+                  </div>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
-            style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        <img src="/images/pug-run.gif" class="gif" alt="pug-running"></img>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+                style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <img src="/images/pug-run.gif" class="gif" alt="pug-running"></img>
 
-      </div>
+          </div>
 
-      <div class="col-sm-5">
-        <img class="logo" src="/images/burger-img.png">
+          <div class="col-sm-5">
+            <img class="logo" src="/images/burger-img.png">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -41,7 +45,8 @@
             {{#each burgers }}
             {{#unless devoured }}
             <li class="list-group-item text-left">{{burger_name}}<button data-id="{{ id }}"
-                class="eaten btn btn-info btn-sm ml-5 float-right">Devour it!</button></li>
+                class="eaten btn btn-info btn-sm ml-5 float-right"><i class="fa fa-cutlery"></i> Devour it!</button>
+            </li>
             {{/unless}}
             {{/each}}
           </ul>
@@ -55,7 +60,7 @@
           <ul class="list-group">
             {{#each burgers }}
             {{#if devoured}}
-            <li class="list-group-item text-left">{{burger_name}}</li>
+            <li class="list-group-item text-left">{{burger_name}} <img class="burger-icon" src="https://img.icons8.com/color/48/000000/hamburger.png"/></li>
             {{/if}}
             {{/each}}
           </ul>

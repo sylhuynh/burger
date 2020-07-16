@@ -2,11 +2,26 @@ body {
     background-color: #FBE6C7;
 }
 
-.welcome-banner {
-    background-color: white;
+.outside-banner {
+    background-color: #FBBB55;
     border: 3px solid #6c4b2e;
     margin: 30px 50px 30px 50px;
     padding: 20px;
+}
+
+.inner-banner {
+    background-color: #dc3545;
+    border: 3px solid #6c4b2e;
+    margin: -10px;
+    padding: 20px;
+}
+
+.welcome-banner {
+    background-color: white;
+    border: 3px solid #6c4b2e;
+    margin: -10px;
+    padding: 20px;
+    border-radius: 20rem;
 }
 
 .app-title {
@@ -37,7 +52,7 @@ width: 65%;
     width: 60%;
     float: left;
     margin-top: 60px;
-    margin-left: 120px;
+    margin-left: 100px;
 }
 
 .progress-bar {
@@ -53,22 +68,28 @@ width: 65%;
 .menu, .media-board {
     background-color: white;
     border: 3px solid #6c4b2e;
-    margin: 0px 25px 0px 25px;
+    margin: 0px 19px 0px 19px;
     padding: 10px;
 }
 
 .burger-container {
-    background-image: url(https://thumbs.dreamstime.com/b/red-white-checkered-tablecloth-background-texture-rhombus-plaid-tablecloths-clothes-shirts-dresses-paper-bed-red-133409114.jpg);
+    background-image: url(https://thumbs.dreamstime.com/b/red-white-checkered-tablecloth-background-texture-rhombus-plaid-tablecloths-clothes-shirts-dresses-paper-bed-red-133409188.jpg);
 }
 
 .list-group-item {
     margin: auto;
-    width: 18rem;
+    width: 18.5rem;
     font-family: 'Sen', sans-serif;
+}
+
+.burger-icon {
+    float: right;
 }
 
 h2 {
     font-family: 'Bungee', cursive;
     color: #FBBB55;
-    text-shadow: 2px 2px rgb(249,157,10);
+    /* text-shadow: 2px 2px rgb(249,157,10); */
+    background-color: #dc3545;
+    border-radius: 3rem;
 }
